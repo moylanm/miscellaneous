@@ -5,7 +5,7 @@ require 'optparse'
 def bin_to_dec(bit_str)
   dec = 0
 
-  bit_str.split('').each_with_index do |bit, idx|
+  bit_str.split('').reverse.each_with_index do |bit, idx|
     dec += 2**idx if bit == '1'
   end
 
