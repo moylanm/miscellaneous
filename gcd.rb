@@ -7,12 +7,11 @@ def gcd(a, b)
   y = b
 
   until y.zero?
-    puts "gcd(#{x}, #{y})"
+    puts "#{x} = #{x / y} * #{y} + #{x % y}"
     r = x % y
     x = y
     y = r
   end
-  puts "gcd(#{x}, #{y})"
 
   x
 end
