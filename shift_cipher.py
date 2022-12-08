@@ -44,13 +44,9 @@ if __name__ == '__main__':
     sys.exit()
     
   result = []
+  action = encrypt if args.encrypt else decrypt
 
-  # TODO: remove code duplication
-  if args.encrypt:
-    for s in args.string:
-      result.append([encrypt(p, args.key) for p in translate_characters(s)])
-  else:
-    for s in args.string:
-      result.append([decrypt(p, args.key) for p in translate_characters(s)])
+  for s in args.string:
+    result.append([action(p, args.key) for p in translate_characters(s)])
   
   print(' '.join([''.join(translate_numbers(c)) for c in result]))
